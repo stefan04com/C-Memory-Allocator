@@ -1,0 +1,58 @@
+Heap Memory Manager
+
+	This project implements a dynamic memory manager simulating heap operations such as memory allocation, deallocation, reading, and writing. It supports initializing a custom heap, managing memory blocks, and tracking fragmentation.
+
+Features
+
+Dynamic Memory Allocation: Allows allocating memory blocks within a simulated heap.
+Memory Deallocation: Frees allocated memory blocks when no longer needed.
+Heap Initialization: Sets up a heap with user-specified parameters such as start address, number of blocks, and memory allocation policy.
+Memory Read: Retrieves data from a specific memory block.
+Memory Write: Writes a string to a designated memory block.
+Memory Dump: Prints the current memory layout, showing the allocation status, free blocks, and any fragmentation.
+Heap Destruction: Cleans up and frees all resources associated with the heap.
+
+Project Structure
+
+The project consists of the following files:
+
+main.c: Contains the program's main logic, handling user input and coordinating heap operations.
+sfl_structures.h: Header file defining key structures for managing the heap, memory blocks, and heap statistics.
+sfl_functions.c: Implements the core functionality of the heap manager, including allocation, deallocation, memory read/write, and heap destruction.
+Compilation
+
+To compile the program, use a standard C compiler like gcc. Once compiled, an executable file is generated, which can be used to run the heap memory manager.
+
+Program Flow
+
+The heap is first initialized with specified parameters, including the starting address and the number of memory blocks.
+The program can then perform memory operations such as allocating a memory block, writing to and reading from the block, and freeing it.
+A memory dump can be used to view the current state of the heap, including allocated blocks, free memory, and fragmentation statistics.
+Finally, the heap is destroyed, releasing all allocated resources.
+
+Data Structures
+
+calls_t
+This structure records statistical information about heap operations, tracking the number of malloc, free, and fragmentation events.
+
+heap_t
+Represents the heap itself, containing:
+
+The starting address of the heap.
+The number of memory blocks.
+Size of the memory lists.
+The type of memory allocation policy.
+allc_list_t
+This structure manages the list of allocated blocks. It keeps track of:
+
+The head of the list of allocated blocks.
+The number of blocks currently allocated.
+The total size of all allocated blocks.
+
+Memory Operations
+
+The program supports several key memory operations, including allocating memory, freeing it, and reading from or writing to specific memory addresses. Each memory operation updates the heap's internal structures and statistics, allowing for detailed tracking of memory usage and fragmentation.
+
+Conclusion
+
+This project provides a simulation of basic heap memory management, helping users understand how memory allocation, deallocation, and fragmentation work. Through its interface, it offers flexibility in initializing a heap, managing memory blocks, and tracking the state of memory in an efficient manner.
